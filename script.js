@@ -113,9 +113,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   captureButton.addEventListener('click', async () => {
     // Capture an image from the video stream
     const canvas = faceapi.createCanvasFromMedia(video);
-    // document.body.append(canvas);
-    // const displaySize = { width: video.width, height: video.height };
-    // faceapi.matchDimensions(canvas, displaySize);
 
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors();
     if (detections.length > 0) {
