@@ -120,14 +120,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceDescriptors();
     if (detections.length > 0) {
       video.pause();
-      // capturedImage = new Image();
-      // capturedImage.src = canvas.toDataURL('image/png');
-      // const downloadLink = document.createElement('a');
-      // downloadLink.href = capturedImage.src;
-      // downloadLink.download = 'captured_image.png';
+      capturedImage = new Image();
+      capturedImage.src = canvas.toDataURL('image/png');
+      const downloadLink = document.createElement('a');
+      downloadLink.href = capturedImage.src;
+      downloadLink.download = 'captured_image.png';
 
-      // // Trigger a click on the anchor to initiate the download
-      // downloadLink.click();
+      // Trigger a click on the anchor to initiate the download
+      downloadLink.click();
       // Show the retake button and hide the capture button
       captureButton.style.display = 'none';
       retakeButton.style.display = 'inline-block';
