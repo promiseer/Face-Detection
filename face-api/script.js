@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
       const DetectionsArray = faceapi.resizeResults(detections, canvasSize);
       canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-      if (DetectionsArray.length > 0) {
+      if (DetectionsArray.length > 0 && DetectionsArray.length < 2) {
         detectionsDraw(canvas, DetectionsArray);
       } else if (DetectionsArray.length > 1) {
         // Draw a label if multiple faces are detected
